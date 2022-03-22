@@ -1,8 +1,12 @@
-import './app.css';
-import LoginPage from './components/login_page/login_page';
+import styles from './app.module.css';
+import Login from './components/login/login';
 
-function App() {
-  return <LoginPage />;
+function App({ authService }) {
+  return (
+    <div className={styles.app}>
+      <Login authService={authService} />;
+    </div>
+  );
 }
 
 export default App;
