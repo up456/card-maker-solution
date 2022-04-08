@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useCallback, useEffect, useState } from 'react/cjs/react.development';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -13,9 +13,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(navigateState && navigateState.id);
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
 
   useEffect(() => {
     if (!userId) {
