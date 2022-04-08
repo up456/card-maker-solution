@@ -2,7 +2,7 @@ import styles from './image_file_input.module.css';
 import React from 'react';
 import { useRef, useState } from 'react/cjs/react.development';
 
-const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
+const ImageFileInput = ({ name, onFileChange, imageUploader }) => {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef();
   const onButtonClick = (event) => {
